@@ -1,17 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BsCart2 } from "react-icons/bs";
-import "./CartButton.css";
+import "./CartLink.css";
 
-function CartButton() {
+function CartLink() {
   return (
-    <div className="cart-button">
+    <div className="cart-link">
       <Link to="/cart">
-        <BsCart2 />
+        <BsCart2 className="cart-link-item" />
         <span className="cart-status">0</span>
       </Link>
     </div>
   );
 }
 
-export default CartButton;
+export default CartLink;
