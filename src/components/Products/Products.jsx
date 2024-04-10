@@ -10,20 +10,22 @@ import { useSelector } from "react-redux";
 function Products() {
   const dispatch = useDispatch();
 
-  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const allProducts = useSelector((state) => state.cart.allProducts);
+  const products = useSelector((state) => state.cart.allProducts);
+
+  const handleGetProducts = () => {
+    getAllProducts().then((result) => {
+      dispatch({ type: GET_ALL_PRODUCTS, payload: result });
+    });
+  };
 
   useEffect(() => {
-    getAllProducts().then((result) => {
-      setProducts(result);
-    });
+    handleGetProducts();
   }, []);
 
   useEffect(() => {
     if (products.length > 0) {
       setLoading(false);
-      dispatch({ type: GET_ALL_PRODUCTS, payload: products });
     }
   }, [products]);
 
@@ -34,7 +36,7 @@ function Products() {
   ) : (
     <div className="products">
       {products.map((product) => (
-        <ProductCard key={product.product_id} data={product} />
+        <ProductCard key={product.product_id} product={product} />
       ))}
     </div>
   );
