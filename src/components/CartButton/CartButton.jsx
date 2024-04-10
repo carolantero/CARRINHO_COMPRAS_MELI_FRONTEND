@@ -1,15 +1,17 @@
-import React from "react"
+import React from "react";
+import { Link } from "react-router-dom";
 import { BsCart2 } from "react-icons/bs";
-import './CartButton.css'
+import "./CartButton.css";
 
 function CartButton() {
-
-    return (
-      <button className="cart-button" type="button">
+  return (
+    <div className="cart-button">
+      <Link to="/cart">
         <BsCart2 />
         <span className="cart-status">0</span>
-      </button>
-    )
-  }
-  
-  export default CartButton
+      </Link>
+    </div>
+  );
+}
+
+export default CartButton;
