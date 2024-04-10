@@ -1,53 +1,52 @@
-.product-card{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    max-width: 300px;
-    background-color: #fff;
-    cursor: pointer;
-    margin: 10px auto;
-    padding: 20px;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 300px;
+  background-color: #fff;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.card-image{
-    width: 100%;
-    margin-bottom: 20px;
+.card-image {
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-.card-title{
-    font-size: 15px;    
-    font-weight: 400;
-    margin-bottom: 10px;
-    line-height: 1.5;
+.card-title {
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  line-height: 1.5;
 }
 
-.card-price{
-    font-size: 27px;    
-    font-weight: 500;
-    margin-bottom: 20px;
+.card-price {
+  font-size: 27px;
+  font-weight: 500;
+  margin-bottom: 20px;
 }
 
-.button-add-card{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(65, 137, 230, .15);;
-    border-color: transparent;
-    border-radius: 4px;
-    cursor: pointer;
-    color: #3483fa;
-    font-size: 12px;
-    font-weight: 500;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.1);
+.button-add-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(65, 137, 230, 0.15);
+  border-color: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #3483fa;
+  font-size: 12px;
+  font-weight: 500;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
-.button-add-card:hover{
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+.button-add-card:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.button-add-card > span{
-    padding: 7px;
-    font-weight: 600;
+.button-add-card > span {
+  padding: 7px;
+  font-weight: 600;
 }
