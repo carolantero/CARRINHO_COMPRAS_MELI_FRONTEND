@@ -1,0 +1,28 @@
+.cart {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: calc(100% - 392px) auto;
+  height: auto;
+  margin: 32px auto 44px;
+  max-width: 1200px;
+  min-height: unset;
+}
+
+.cart-items {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 30px;
+}
+
+.cart-items h2 {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.cart-resume {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 30px;
+}
