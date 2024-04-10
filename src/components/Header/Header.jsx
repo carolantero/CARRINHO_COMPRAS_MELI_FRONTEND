@@ -1,19 +1,17 @@
-import React from "react"
-import CartButton from "../CartButton/CartButton"
-import './Header.css'
-import Logo from '../../assets/logo.svg'
-
+import React from "react";
+import { Link } from "react-router-dom";
+import CartButton from "../CartButton/CartButton";
+import "./Header.css";
 
 function Header() {
+  return (
+    <header className="header">
+      <div className="header-container">
+        <Link to="/">HOME</Link>
+        <CartButton />
+      </div>
+    </header>
+  );
+}
 
-    return (
-      <header className="header" >
-        <div className="header-container">
-            <img src={Logo} alt="Logo"/>
-            <CartButton/>
-        </div>
-      </header>
-    )
-  }
-  
-  export default Header
+export default Header;
