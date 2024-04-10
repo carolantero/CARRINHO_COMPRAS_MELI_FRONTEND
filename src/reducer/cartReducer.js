@@ -1,8 +1,13 @@
-import { GET_ALL_PRODUCTS, CART_PRODUCTS } from "./../actions/cartActions";
+import {
+  GET_ALL_PRODUCTS,
+  ADD_CART_PRODUCTS,
+  GET_CART_PRODUCTS,
+} from "./../actions/cartActions";
 
 const initialState = {
   allProducts: [],
-  allCartProducts: [],
+  addCartProducts: [],
+  getCartProducts: [],
 };
 
 const cartReducer = (state = initialState, action) => {
@@ -13,10 +18,16 @@ const cartReducer = (state = initialState, action) => {
         allProducts: action.payload,
       };
 
-    case CART_PRODUCTS:
+    case ADD_CART_PRODUCTS:
       return {
         ...state,
-        allCartProducts: action.payload,
+        addCartProducts: action.payload,
+      };
+
+    case GET_CART_PRODUCTS:
+      return {
+        ...state,
+        getCartProducts: action.payload,
       };
 
     default:
