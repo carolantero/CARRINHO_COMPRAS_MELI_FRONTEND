@@ -1,19 +1,49 @@
-import React from 'react'
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
-import HomePage from './pages/HomePage/HomePage'
-import CartPage from './pages/CartPage/CartPage'
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Header from "./components/Header/Header";
+import HomePage from "./pages/HomePage/HomePage";
+import CartPage from "./pages/CartPage/CartPage";
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
 
-function App() {
-
+const Dashboard = () => {
   return (
     <div>
-      <Header/>
-      <HomePage/>
-      <CartPage/>
-      <Footer/>
+      <Header />
+      <HomePage />
     </div>
-  )
+  );
+};
+
+const Cartboard = () => {
+  return (
+    <div>
+      <Header />
+      <CartPage />
+    </div>
+  );
+};
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Dashboard />,
+  },
+  {
+    path: "/cart",
+    element: <Cartboard />,
+  },
+  {
+    path: "*",
+    element: <ErrorPage />,
+  },
+]);
+
+function App() {
+  return (
+    <div className="App">
+      <RouterProvider router={router} />
+    </div>
+  );
 }
 
-export default App
+export default App;
