@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
 import "./ProductCard.css";
 import { useDispatch } from "react-redux";
-import { CART_PRODUCTS } from "../../actions/cartActions";
+import { ADD_CART_PRODUCTS } from "../../actions/cartActions";
 import { useSelector } from "react-redux";
 
 function ProductCard({ product }) {
   const dispatch = useDispatch();
   const { product_id, product_title, product_image, product_price } = product;
-  const allCartProducts = useSelector((state) => state.cart.allCartProducts);
+  const addCartProducts = useSelector((state) => state.cart.addCartProducts);
 
   const handleAddCar = () => {
-    dispatch({ type: CART_PRODUCTS, payload: [...allCartProducts, product] });
+    dispatch({
+      type: ADD_CART_PRODUCTS,
+      payload: [...addCartProducts, product],
+    });
   };
 
   return (
