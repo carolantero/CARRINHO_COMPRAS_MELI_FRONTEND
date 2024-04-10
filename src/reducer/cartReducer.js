@@ -1,15 +1,22 @@
-import { GET_ALL_PRODUCTS } from "./../actions/cartActions";
+import { GET_ALL_PRODUCTS, CART_PRODUCTS } from "./../actions/cartActions";
 
 const initialState = {
-  allProducts: [""],
+  allProducts: [],
+  allCartProducts: [],
 };
 
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "GET_ALL_PRODUCTS":
+    case GET_ALL_PRODUCTS:
       return {
         ...state,
         allProducts: action.payload,
+      };
+
+    case CART_PRODUCTS:
+      return {
+        ...state,
+        allCartProducts: action.payload,
       };
 
     default:
