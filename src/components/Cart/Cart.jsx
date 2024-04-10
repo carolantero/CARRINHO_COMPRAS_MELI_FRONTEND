@@ -6,13 +6,13 @@ import { useSelector } from "react-redux";
 
 function Cart() {
   const [loading, setLoading] = useState(true);
-  const allCartProducts = useSelector((state) => state.cart.allCartProducts);
+  const getCartProducts = useSelector((state) => state.cart.getCartProducts);
 
   useEffect(() => {
-    if (allCartProducts.length > 0) {
+    if (getCartProducts.length > 0) {
       setLoading(false);
     }
-  }, [allCartProducts]);
+  }, [getCartProducts]);
 
   return loading ? (
     <div className="cart">
@@ -26,7 +26,7 @@ function Cart() {
     <div className="cart">
       <div className="cart-items">
         <h2>Carrinho</h2>
-        {allCartProducts.map((product) => (
+        {getCartProducts.map((product) => (
           <CartItem key={product.product_id} product={product} />
         ))}
       </div>
