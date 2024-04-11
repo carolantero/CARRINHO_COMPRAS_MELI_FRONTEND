@@ -21,7 +21,9 @@ function CartLink() {
     <div className="cart-link">
       <Link to="/cart" onClick={handleGetCartProducts}>
         <BsCart2 className="cart-link-item" />
-        <span className="cart-status">0</span>
+        {addCartProducts.length > 0 && (
+          <span className="cart-status">{addCartProducts.length}</span>
+        )}
       </Link>
     </div>
   );
