@@ -42,9 +42,7 @@ function CartItem({ product }) {
   };
 
   useEffect(() => {
-    if (postCartProductsItem.length > 0) {
-      handleGetCartProducts();
-    }
+    handleGetCartProducts();
   }, [postCartProductsItem]);
 
   return (
