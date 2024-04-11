@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Cart.css";
 import CartItem from "./CartItem";
-import GradientCircularProgress from "../Loading/Loading";
 import { useSelector } from "react-redux";
 
 function Cart() {
