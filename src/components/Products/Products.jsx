@@ -22,6 +22,7 @@ function Products() {
 
   useEffect(() => {
     handleGetProducts();
+    postCartProducts(addCartProducts);
   }, []);
 
   useEffect(() => {
