@@ -7,6 +7,10 @@ import { useSelector } from "react-redux";
 function Cart() {
   const [loading, setLoading] = useState(true);
   const getCartProducts = useSelector((state) => state.cart.getCartProducts);
+  const totalPrice = getCartProducts.reduce(
+    (acc, item) => item.product_price + acc,
+    0
+  );
 
   useEffect(() => {
     if (getCartProducts.length > 0) {
@@ -20,7 +24,6 @@ function Cart() {
         <h2>Carrinho</h2>
         <GradientCircularProgress />
       </div>
-      <div className="cart-resume">valor total</div>
     </div>
   ) : (
     <div className="cart">
@@ -30,7 +33,15 @@ function Cart() {
           <CartItem key={product.product_id} product={product} />
         ))}
       </div>
-      <div className="cart-resume">valor total</div>
+      <div className="cart-resume">
+        <h3>Valor Total</h3>
+        <span>
+          {totalPrice.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+          })}
+        </span>
+      </div>
     </div>
   );
 }
