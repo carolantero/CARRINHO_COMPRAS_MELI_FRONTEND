@@ -22,7 +22,15 @@ function Cart() {
     <div className="cart">
       <div className="cart-items">
         <h2>Carrinho</h2>
-        <GradientCircularProgress />
+      </div>
+      <div className="cart-resume">
+        <h3>Valor Total</h3>
+        <span>
+          {totalPrice.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+          })}
+        </span>
       </div>
     </div>
   ) : (
