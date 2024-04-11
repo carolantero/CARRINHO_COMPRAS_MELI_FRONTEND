@@ -2,14 +2,9 @@ import React, { useEffect } from "react";
 import "./CartItem.css";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { useSelector } from "react-redux";
-import { postCartProducts } from "../../api/apiShoppingCart";
 import { useDispatch } from "react-redux";
-import { getCartProducts } from "../../api/apiShoppingCart";
-import {
-  POST_CART_PRODUCTS,
-  GET_CART_PRODUCTS,
-  ADD_CART_PRODUCTS,
-} from "../../actions/cartActions";
+import { handleGetCartProducts } from "../../utils/handleGetCartProducts";
+import { handleDeleteCartProduct } from "../../utils/handleDeleteCartProduct";
 
 function CartItem({ product }) {
   const dispatch = useDispatch();
@@ -21,28 +16,8 @@ function CartItem({ product }) {
     (state) => state.cart.postCartProducts
   );
 
-  const handleGetCartProducts = () => {
-    getCartProducts().then((result) => {
-      dispatch({ type: GET_CART_PRODUCTS, payload: result });
-    });
-  };
-
-  const handleDeleteCartProduct = async () => {
-    const updatedItems = getCartProductsItems.filter(
-      (item) => item.product_id != product_id
-    );
-
-    dispatch({ type: ADD_CART_PRODUCTS, payload: updatedItems });
-
-    const updatedCart = await postCartProducts(updatedItems);
-    dispatch({
-      type: POST_CART_PRODUCTS,
-      payload: updatedCart,
-    });
-  };
-
   useEffect(() => {
-    handleGetCartProducts();
+    handleGetCartProducts(dispatch);
   }, [postCartProductsItem]);
 
   return (
@@ -67,7 +42,9 @@ function CartItem({ product }) {
       <button
         className="button-item-remove"
         type="button"
-        onClick={() => handleDeleteCartProduct()}
+        onClick={() =>
+          handleDeleteCartProduct(product_id, dispatch, getCartProductsItems)
+        }
       >
         <RiDeleteBin6Line />
       </button>
