@@ -2,11 +2,13 @@ import {
   GET_ALL_PRODUCTS,
   ADD_CART_PRODUCTS,
   GET_CART_PRODUCTS,
+  POST_CART_PRODUCTS,
 } from "./../actions/cartActions";
 
 const initialState = {
   allProducts: [],
   addCartProducts: [],
+  postCartProducts: [],
   getCartProducts: [],
 };
 
@@ -28,6 +30,12 @@ const cartReducer = (state = initialState, action) => {
       return {
         ...state,
         getCartProducts: action.payload,
+      };
+
+    case POST_CART_PRODUCTS:
+      return {
+        ...state,
+        postCartProducts: action.payload,
       };
 
     default:
