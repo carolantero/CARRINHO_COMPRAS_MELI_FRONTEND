@@ -15,6 +15,7 @@ export const postCartProducts = async (item) => {
       body: JSON.stringify(item),
     });
     const data = await response.json();
+    return data;
   } catch (error) {
     console.error("Error adding item to cart:", error);
   }
