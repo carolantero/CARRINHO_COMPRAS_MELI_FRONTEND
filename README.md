@@ -18,6 +18,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Redux](https://redux.js.org/) - Biblioteca de gerenciamento de estado para controle global do estado da aplicação.
 - [React Router DOM](https://reactrouter.com/) - Biblioteca para roteamento em aplicações React.
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Linguagem de estilização para desenvolvimento web.
+- [Docker](https://docs.docker.com/) - Plataforma de software para automação de implantação e execução de aplicativos em ambientes isolados chamados containers..
 
   #### 🔍 Recursos Visuais
 
@@ -37,6 +38,8 @@ Para iniciá-lo, siga os passos abaixo:
 
 # Windows
 
+#### 💻 Executar com npm
+
 ```bash
 # Instalando dependências do projeto
 $ npm install
@@ -44,3 +47,15 @@ $ npm install
 # Rodar o projeto
 $ npm run dev
 ```
+
+#### 🐳 Executar com Docker
+
+```bash
+# Construa a imagem Docker:
+$ docker build -t carrinhocomprasfrontend:latest .
+
+# Execute o contêiner Docker:
+$ docker run -p 3000:3000 carrinhocomprasfrontend
+```
+
+- ###### A aplicação estará acessível em http://localhost:3000.
