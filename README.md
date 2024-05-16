@@ -1,6 +1,5 @@
 ## 🛒 Projeto CARRINHO DE COMPRAS
 
-Repositório para o case técnico do Mercado Livre.
 Esta aplicação simula o fluxo de um carrinho de compras, permitindo:
 
 - Adicionar produtos aos carrinho
