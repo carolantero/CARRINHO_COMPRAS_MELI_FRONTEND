@@ -58,3 +58,7 @@ $ docker run -p 3000:3000 carrinhocomprasfrontend
 ```
 
 - ###### A aplicação estará acessível em http://localhost:3000.
+
+## Extra
+
+- ###### O back-end dessa aplicação está disponível em: https://github.com/carolantero/CARRINHO_COMPRAS_MELI_BACKEND
